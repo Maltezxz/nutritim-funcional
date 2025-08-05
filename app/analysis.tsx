@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import { useState, useEffect } from 'react';
-import { EXPO_PUBLIC_OPENAI_API_KEY } from '@env';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -128,8 +127,8 @@ export default function Analysis() {
         throw new Error('Imagem inválida ou muito pequena');
       }
       
-      // Chave da OpenAI (usando variável de ambiente)
-      const apiKey = EXPO_PUBLIC_OPENAI_API_KEY;
+      // Chave da OpenAI (usando process.env diretamente)
+      const apiKey = process.env.EXPO_PUBLIC_OPENAI_API_KEY;
       
       console.log('API Key loaded:', apiKey ? 'Yes' : 'No');
       console.log('API Key length:', apiKey?.length);
