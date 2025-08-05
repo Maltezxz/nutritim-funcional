@@ -131,6 +131,9 @@ export default function Analysis() {
       // Chave da OpenAI (usando variável de ambiente)
       const apiKey = EXPO_PUBLIC_OPENAI_API_KEY;
       
+      console.log('API Key loaded:', apiKey ? 'Yes' : 'No');
+      console.log('API Key length:', apiKey?.length);
+      
       // Verificar se a chave está válida
       if (!apiKey || apiKey.length < 50) {
         throw new Error('Chave da API inválida');
